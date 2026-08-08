@@ -124,10 +124,10 @@ onUnmounted(() => {
                     :key="skill"
                     class="group flex items-center justify-between py-2 border-b border-border-custom/20 text-secondary-text hover:text-primary-text transition-colors duration-300 select-none cursor-pointer"
                   >
-                    <span class="font-sans text-xs md:text-sm font-medium tracking-wide transition-colors duration-300 group-hover:text-accent">
+                    <span class="font-sans text-xs md:text-sm font-medium tracking-wide transition-colors duration-300 group-hover:text-tech-hover">
                       {{ skill }}
                     </span>
-                    <span class="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-accent font-semibold text-xs leading-none">
+                    <span class="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-accent group-hover:text-tech-hover font-semibold text-xs leading-none">
                       &rarr;
                     </span>
                   </div>

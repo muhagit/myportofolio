@@ -33,7 +33,7 @@ const handleImageError = () => {
       </span>
     </div>
     
-    <div class="col-span-12 border-t border-border-custom pb-4"></div>
+    <div class="col-span-12 border-t border-border pb-4"></div>
 
     <!-- Alternating Column Layout -->
     <!-- Image block takes 7 cols on desktop, Order is 1 if even, 2 if odd -->
@@ -45,7 +45,7 @@ const handleImageError = () => {
     >
       <RouterLink 
         :to="{ name: 'project-detail', params: { id: project.id } }"
-        class="block overflow-hidden border border-border-custom bg-border-custom/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+        class="block overflow-hidden border border-border bg-border/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
         aria-label="View case study for {{ project.title }}"
       >
         <div class="relative overflow-hidden aspect-[16/9] w-full">
@@ -58,8 +58,8 @@ const handleImageError = () => {
             loading="lazy"
           />
           <!-- Editorial Placeholder Fallback -->
-          <div v-else class="w-full h-full flex flex-col items-center justify-center p-8 bg-border-custom/10 text-center select-none">
-            <span class="font-heading font-bold text-xs uppercase tracking-widest text-secondary-text mb-1">
+          <div v-else class="w-full h-full flex flex-col items-center justify-center p-8 bg-border/10 text-center select-none">
+            <span class="font-heading font-bold text-xs uppercase tracking-widest text-text-secondary mb-1">
               Project Preview
             </span>
             <span class="font-sans text-[10px] text-accent font-semibold tracking-widest uppercase">
@@ -81,12 +81,12 @@ const handleImageError = () => {
         <span class="font-sans text-[10px] md:text-xs font-semibold tracking-widest text-accent uppercase">
           {{ project.category }} &middot; {{ project.year }}
         </span>
-        <h3 class="font-heading font-bold uppercase tracking-tight text-2xl md:text-3xl text-primary-text group-hover:text-accent transition-colors duration-300">
+        <h3 class="font-heading font-bold uppercase tracking-tight text-2xl md:text-3xl text-text group-hover:text-accent transition-colors duration-300">
           {{ project.title }}
         </h3>
       </div>
 
-      <p class="font-sans text-sm leading-relaxed text-secondary-text">
+      <p class="font-sans text-sm leading-relaxed text-text-secondary">
         {{ project.shortDescription }}
       </p>
 
@@ -95,7 +95,7 @@ const handleImageError = () => {
         <span 
           v-for="tech in project.technologies" 
           :key="tech"
-          class="font-sans text-[10px] font-semibold tracking-wider uppercase border border-border-custom/60 px-2 py-0.5 text-secondary-text bg-primary-bg"
+          class="font-sans text-[10px] font-semibold tracking-wider uppercase border border-border/60 px-2 py-0.5 text-text-secondary bg-bg"
         >
           {{ tech }}
         </span>
@@ -105,7 +105,7 @@ const handleImageError = () => {
       <div class="pt-2">
         <RouterLink 
           :to="{ name: 'project-detail', params: { id: project.id } }"
-          class="inline-flex items-center gap-2 text-xs font-bold font-sans tracking-widest uppercase text-primary-text hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors duration-300"
+          class="inline-flex items-center gap-2 text-xs font-bold font-sans tracking-widest uppercase text-text hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors duration-300"
         >
           View Case Study 
           <span class="inline-block transform group-hover:translate-x-1.5 transition-transform duration-300">

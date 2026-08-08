@@ -169,6 +169,19 @@ onUnmounted(() => {
                   <span>Instagram</span>
                   <span class="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300 text-xs font-normal" aria-hidden="true">&nearr;</span>
                 </a>
+
+                <!-- TikTok -->
+                <a 
+                  v-if="contact.tiktok" 
+                  :href="contact.tiktok" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="group flex items-center gap-1.5 text-xs md:text-sm font-sans font-semibold tracking-widest uppercase text-secondary-text hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded px-1 transition-colors duration-300"
+                  aria-label="TikTok (opens in a new tab)"
+                >
+                  <span>TikTok</span>
+                  <span class="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300 text-xs font-normal" aria-hidden="true">&nearr;</span>
+                </a>
               </nav>
             </div>
 

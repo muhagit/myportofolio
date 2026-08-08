@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A minimal, modern, editorial-style developer portfolio website showcasing custom case studies, frontend engineering, and clean design." />
     <title>Build. Solve. Create. | Developer Portfolio</title>
+    <script>
+      (function() {
+        try {
+          const theme = localStorage.getItem('portfolio-theme');
+          if (theme === 'light') {
+            document.documentElement.classList.add('light');
+          } else {
+            document.documentElement.classList.remove('light');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="app"></div>

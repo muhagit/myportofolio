@@ -66,6 +66,20 @@ import { contact } from '@/data/contact'
               </svg>
             </a>
 
+            <!-- TikTok SVG -->
+            <a 
+              v-if="contact.tiktok" 
+              :href="contact.tiktok" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="text-secondary-text hover:text-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded transition-colors duration-200" 
+              aria-label="TikTok (opens in a new tab)"
+            >
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.18 1.02 1.13 2.5 1.74 3.97 1.96v3.74c-1.89-.04-3.76-.72-5.18-2.02-.1-.08-.18-.17-.26-.26V15c0 2.22-1.07 4.38-2.92 5.58-2.01 1.3-4.75 1.32-6.78.04-2.15-1.32-3.15-3.95-2.52-6.38.5-2.14 2.37-3.79 4.58-4.04.09-.01.18-.01.27-.02v3.76c-1.12.08-2.2.82-2.58 1.88-.5 1.3.16 2.87 1.43 3.44 1.27.6 2.92.17 3.65-.98.39-.59.57-1.31.55-2.02V.02z"/>
+              </svg>
+            </a>
+
             <!-- Email SVG -->
             <a 
               v-if="contact.email" 

@@ -1,12 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+:root {
+  --color-bg: #0A0A0A;
+  --color-surface: #111113;
+  --color-surface-elevated: #18181B;
+
+  --color-text: #F5F5F5;
+  --color-text-secondary: #A1A1AA;
+  --color-text-tertiary: #71717A;
+
+  --color-border: #27272A;
+  --color-border-strong: #3F3F46;
+
+  --color-accent: #8B5CF6;
+  --color-accent-hover: #A78BFA;
+
+  --color-accent-soft: rgba(139, 92, 246, 0.12);
+  --color-accent-border: rgba(139, 92, 246, 0.35);
+
+  --color-selection-bg: #8B5CF6;
+  --color-selection-text: #FFFFFF;
+
+  --color-focus: #A78BFA;
+
+  --color-overlay: rgba(0, 0, 0, 0.6);
+
+  --color-tech-hover: #A78BFA;
+}
+
+.light {
+  --color-bg: #F5F5F2;
+  --color-surface: #FAFAF8;
+  --color-surface-elevated: #FFFFFF;
+
+  --color-text: #18181B;
+  --color-text-secondary: #52525B;
+  --color-text-tertiary: #71717A;
+
+  --color-border: #D4D4D8;
+  --color-border-strong: #A1A1AA;
+
+  --color-accent: #6D28D9;
+  --color-accent-hover: #5B21B6;
+
+  --color-accent-soft: rgba(109, 40, 217, 0.08);
+  --color-accent-border: rgba(109, 40, 217, 0.3);
+
+  --color-selection-bg: #6D28D9;
+  --color-selection-text: #FFFFFF;
+
+  --color-focus: #6D28D9;
+
+  --color-overlay: rgba(24, 24, 27, 0.35);
+
+  --color-tech-hover: #6D28D9;
+}
+
 @theme {
-  --color-primary-bg: #0A0A0A;
-  --color-primary-text: #F5F5F5;
-  --color-secondary-text: #A1A1AA;
-  --color-border-custom: #27272A;
-  --color-accent: #7C3AED;
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-elevated: var(--color-surface-elevated);
+
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+
+  --color-border: var(--color-border);
+  --color-border-strong: var(--color-border-strong);
+
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+
+  --color-accent-soft: var(--color-accent-soft);
+  --color-accent-border: var(--color-accent-border);
+
+  --color-selection-bg: var(--color-selection-bg);
+  --color-selection-text: var(--color-selection-text);
+
+  --color-focus: var(--color-focus);
+
+  --color-overlay: var(--color-overlay);
+
+  --color-tech-hover: var(--color-tech-hover);
+
+  /* Legacy mappings to maintain absolute backward compatibility with existing styles if any */
+  --color-primary-bg: var(--color-bg);
+  --color-primary-text: var(--color-text);
+  --color-secondary-text: var(--color-text-secondary);
+  --color-border-custom: var(--color-border);
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
@@ -25,8 +107,8 @@
 
 @layer base {
   html, body {
-    background-color: var(--color-primary-bg);
-    color: var(--color-primary-text);
+    background-color: var(--color-bg);
+    color: var(--color-text);
     font-family: var(--font-sans);
     margin: 0;
     padding: 0;
@@ -37,6 +119,27 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 4px;
+  }
+
+  /* Global selection rules */
+  ::selection {
+    background: var(--color-selection-bg);
+    color: var(--color-selection-text);
+  }
+}
+
+/* Restrained transitions for theme-dependent properties */
+@media (prefers-reduced-motion: no-preference) {
+  html, body, header, footer, section, div, p, span, a, button, input, textarea, select {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 250ms;
+    transition-timing-function: ease;
   }
 }
 

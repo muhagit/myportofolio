@@ -5,7 +5,7 @@ import Footer from '@/components/Footer.vue'
 </script>
 
 <template>
-  <div class="min-h-screen bg-primary-bg text-primary-text flex flex-col font-sans antialiased selection:bg-accent selection:text-primary-text">
+  <div class="min-h-screen bg-bg text-text flex flex-col font-sans antialiased">
     <Navbar />
     
     <main class="flex-grow">
