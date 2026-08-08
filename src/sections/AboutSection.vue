@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -7,45 +7,52 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const aboutRef = ref(null)
+let ctx
 
 onMounted(() => {
   const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   if (isReduced) return
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: aboutRef.value,
-      start: 'top 80%',
-      toggleActions: 'play none none none'
-    }
-  })
+  ctx = gsap.context(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: aboutRef.value,
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    })
 
-  tl.from('.about-label', {
-    y: 20,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1
-  })
+    tl.from('.about-label', {
+      y: 20,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.1
+    })
 
-  tl.from('.about-title-line', {
-    y: '100%',
-    duration: 0.8,
-    stagger: 0.12,
-    ease: 'power4.out'
-  }, '-=0.4')
+    tl.from('.about-title-line', {
+      y: '100%',
+      duration: 0.8,
+      stagger: 0.12,
+      ease: 'power4.out'
+    }, '-=0.4')
 
-  tl.from('.about-desc', {
-    y: 20,
-    opacity: 0,
-    duration: 0.6
-  }, '-=0.4')
+    tl.from('.about-desc', {
+      y: 20,
+      opacity: 0,
+      duration: 0.6
+    }, '-=0.4')
 
-  tl.from('.about-meta-item', {
-    y: 15,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1
-  }, '-=0.4')
+    tl.from('.about-meta-item', {
+      y: 15,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.1
+    }, '-=0.4')
+  }, aboutRef.value)
+})
+
+onUnmounted(() => {
+  if (ctx) ctx.revert()
 })
 </script>
 

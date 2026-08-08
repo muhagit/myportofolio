@@ -37,24 +37,24 @@ onUnmounted(() => {
       </RouterLink>
       
       <div class="flex items-center gap-6 md:gap-10 font-sans text-[11px] md:text-xs font-semibold tracking-widest uppercase">
-        <a 
-          href="#about" 
+        <RouterLink 
+          to="/#about" 
           class="text-secondary-text hover:text-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg rounded transition-colors duration-200"
         >
           About
-        </a>
-        <a 
-          href="#projects" 
+        </RouterLink>
+        <RouterLink 
+          to="/#projects" 
           class="text-secondary-text hover:text-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg rounded transition-colors duration-200"
         >
           Projects
-        </a>
-        <a 
-          href="#contact" 
+        </RouterLink>
+        <RouterLink 
+          to="/#contact" 
           class="text-secondary-text hover:text-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-bg rounded transition-colors duration-200"
         >
           Contact
-        </a>
+        </RouterLink>
       </div>
     </nav>
   </header>

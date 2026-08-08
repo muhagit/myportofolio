@@ -9,6 +9,7 @@ export const projects = [
     featured: true,
     image: '', // Intentionally blank to test the editorial fallback placeholder
     gallery: [],
+    technologies: ['Vue 3', 'Vite', 'Tailwind CSS', 'GSAP'],
     links: {
       live: 'https://github.com/muhagit/myportofolio',
       github: 'https://github.com/muhagit/myportofolio'
@@ -31,6 +32,7 @@ export const projects = [
     featured: true,
     image: '', // Intentionally blank to test the editorial fallback placeholder
     gallery: [],
+    technologies: ['Node.js', 'Express', 'Vite', 'Tailwind CSS'],
     links: {
       live: '',
       github: 'https://github.com'

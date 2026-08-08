@@ -1,19 +1,10 @@
 <script setup>
-import { onMounted, ref } from 'vue'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { projects } from '@/data/projects'
 import ProjectCard from '@/components/ProjectCard.vue'
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger)
-
-const projectsSectionRef = ref(null)
 </script>
 
 <template>
   <section 
-    ref="projectsSectionRef" 
     id="projects" 
     class="py-24 md:py-32 border-t border-border-custom bg-primary-bg relative overflow-hidden"
   >

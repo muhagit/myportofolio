@@ -1,61 +1,68 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { gsap } from 'gsap'
 
 const heroRef = ref(null)
+let ctx
 
 onMounted(() => {
   // Check for prefers-reduced-motion
   const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   if (isReduced) return
 
-  // Stagger reveal of hero layout items
-  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+  ctx = gsap.context(() => {
+    // Stagger reveal of hero layout items
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
-  tl.from('.hero-label', {
-    y: 20,
-    opacity: 0,
-    duration: 0.6
-  })
+    tl.from('.hero-label', {
+      y: 20,
+      opacity: 0,
+      duration: 0.6
+    })
 
-  tl.from('.hero-title-line', {
-    y: '100%',
-    duration: 0.8,
-    stagger: 0.12,
-    ease: 'power4.out'
-  }, '-=0.4')
+    tl.from('.hero-title-line', {
+      y: '100%',
+      duration: 0.8,
+      stagger: 0.12,
+      ease: 'power4.out'
+    }, '-=0.4')
 
-  tl.from('.hero-badge', {
-    y: 20,
-    opacity: 0,
-    duration: 0.6
-  }, '-=0.4')
+    tl.from('.hero-badge', {
+      y: 20,
+      opacity: 0,
+      duration: 0.6
+    }, '-=0.4')
 
-  tl.from('.hero-desc', {
-    y: 20,
-    opacity: 0,
-    duration: 0.6
-  }, '-=0.4')
+    tl.from('.hero-desc', {
+      y: 20,
+      opacity: 0,
+      duration: 0.6
+    }, '-=0.4')
 
-  tl.from('.hero-cta', {
-    y: 20,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1
-  }, '-=0.4')
+    tl.from('.hero-cta', {
+      y: 20,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.1
+    }, '-=0.4')
 
-  tl.from('.hero-meta-item', {
-    y: 15,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1
-  }, '-=0.4')
+    tl.from('.hero-meta-item', {
+      y: 15,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.1
+    }, '-=0.4')
 
-  tl.from('.hero-scroll', {
-    opacity: 0,
-    y: 10,
-    duration: 0.6
-  }, '-=0.2')
+    tl.from('.hero-scroll', {
+      opacity: 0,
+      y: 10,
+      duration: 0.6
+    }, '-=0.2')
+  }, heroRef.value)
+})
+
+onUnmounted(() => {
+  if (ctx) ctx.revert()
 })
 </script>
 

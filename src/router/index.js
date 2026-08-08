@@ -20,6 +20,25 @@ const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
+    } else if (to.hash) {
+      return new Promise((resolve) => {
+        let attempts = 0
+        const checkEl = () => {
+          const el = document.querySelector(to.hash)
+          if (el) {
+            resolve({
+              el: to.hash,
+              behavior: 'smooth'
+            })
+          } else if (attempts < 20) {
+            attempts++
+            setTimeout(checkEl, 50)
+          } else {
+            resolve({ top: 0 })
+          }
+        }
+        checkEl()
+      })
     } else {
       return { top: 0 }
     }

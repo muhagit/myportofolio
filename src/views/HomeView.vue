@@ -1,8 +1,19 @@
 <script setup>
+import { onMounted } from 'vue'
 import HeroSection from '@/sections/HeroSection.vue'
 import AboutSection from '@/sections/AboutSection.vue'
 import SkillsSection from '@/sections/SkillsSection.vue'
 import ProjectsSection from '@/sections/ProjectsSection.vue'
+import JourneySection from '@/sections/JourneySection.vue'
+import ContactSection from '@/sections/ContactSection.vue'
+
+onMounted(() => {
+  document.title = 'Build. Solve. Create. | Developer Portfolio'
+  const metaDesc = document.querySelector('meta[name="description"]')
+  if (metaDesc) {
+    metaDesc.setAttribute('content', 'A minimal, modern, editorial-style developer portfolio website showcasing custom case studies, frontend engineering, and clean design.')
+  }
+})
 </script>
 
 <template>
@@ -19,14 +30,11 @@ import ProjectsSection from '@/sections/ProjectsSection.vue'
     <!-- 04 / Selected Work -->
     <ProjectsSection />
 
-    <!-- 05 / Contact (Placeholder for Phase 4) -->
-    <section id="contact" class="max-w-7xl mx-auto px-6 pt-16">
-      <div class="border-t border-border-custom pt-12 space-y-4">
-        <h2 class="text-xs font-semibold tracking-widest text-accent uppercase">05 / Contact</h2>
-        <p class="text-secondary-text max-w-xl text-sm leading-relaxed">
-          Contact options and network details to be implemented in a future phase.
-        </p>
-      </div>
-    </section>
+    <!-- 05 / Journey -->
+    <JourneySection />
+
+    <!-- 06 / Contact -->
+    <ContactSection />
   </div>
 </template>
+
