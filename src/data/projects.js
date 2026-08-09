@@ -34,7 +34,7 @@ export const projects = [
     gallery: ['/nicky-frozen-pos.png'],
     technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Midtrans', 'Tailwind CSS'],
     links: {
-      live: 'https://pos-system-nicky-frozen-frontend.vercel.app',
+      live: 'https://nickypos.web.id',
       github: 'https://github.com/muhagit/Pos-System-Nicky-Frozen'
     },
     caseStudy: {
@@ -57,7 +57,7 @@ export const projects = [
     gallery: ['/public-complaint-service.png'],
     technologies: ['Vue.js', 'Laravel', 'Bootstrap', 'Swiper', 'AOS', 'MySQL'],
     links: {
-      live: '',
+      live: 'https://laporgan.web.id',
       github: 'https://github.com/muhagit/website-layanan-pengaduan-masyarakat'
     },
     caseStudy: {
