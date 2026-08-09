@@ -8,7 +8,14 @@ export const projects = [
     description: 'JSQuest is an educational web application designed to teach JavaScript fundamentals through gamification. It provides a structured learning curriculum consisting of modular topics, interactive learning materials, and practical coding challenges. The platform features an integrated code editor powered by Monaco Editor and an isolated frontend execution sandbox for instant verification, motivating users with XP rewards and real-time feedback.',
     featured: true,
     image: '/jsquest.png',
-    gallery: ['/jsquest.png'],
+    gallery: [
+      '/jsquest.png',
+      '/jsquest-dashboard.png',
+      '/jsquest-questmap.png',
+      '/jsquest-challenge.png',
+      '/jsquest-module.png',
+      '/jsquest-materials.png'
+    ],
     technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Monaco Editor', 'Tailwind CSS'],
     links: {
       live: '',
@@ -54,7 +61,14 @@ export const projects = [
     description: 'Sistem Layanan Pengaduan Masyarakat is a web application designed to facilitate public complaints and feedback. The system allows citizens to submit detailed complaints, track verification stages, and communicate with administrative officers. The application is built with a decoupled architecture featuring a Vue 3 frontend and a Laravel backend API.',
     featured: false,
     image: '/public-complaint-service.png',
-    gallery: ['/public-complaint-service.png'],
+    gallery: [
+      '/public-complaint-service.png',
+      '/pcs-form.png',
+      '/pcs-track.png',
+      '/pcs-help.png',
+      '/pcs-about.png',
+      '/pcs-news.png'
+    ],
     technologies: ['Vue.js', 'Laravel', 'Bootstrap', 'Swiper', 'AOS', 'MySQL'],
     links: {
       live: 'https://laporgan.web.id',
