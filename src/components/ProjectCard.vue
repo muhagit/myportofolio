@@ -84,6 +84,9 @@ const handleImageError = () => {
         <h3 class="font-heading font-bold uppercase tracking-tight text-2xl md:text-3xl text-text group-hover:text-accent transition-colors duration-300">
           {{ project.title }}
         </h3>
+        <p class="font-sans text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-text-secondary">
+          {{ project.caseStudy.role }}
+        </p>
       </div>
 
       <p class="font-sans text-sm leading-relaxed text-text-secondary">

@@ -193,6 +193,13 @@ watch(project, () => {
           </p>
         </section>
 
+        <section v-if="project.caseStudy.contribution" class="space-y-4">
+          <h2 class="font-heading text-xs font-semibold tracking-widest text-accent uppercase">My Contribution</h2>
+          <p class="font-sans text-sm md:text-base leading-relaxed text-secondary-text">
+            {{ project.caseStudy.contribution }}
+          </p>
+        </section>
+
         <section v-if="project.caseStudy.result" class="space-y-4">
           <h2 class="font-heading text-xs font-semibold tracking-widest text-accent uppercase">The Result</h2>
           <p class="font-sans text-sm md:text-base leading-relaxed text-secondary-text">

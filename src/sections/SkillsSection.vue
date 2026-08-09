@@ -9,20 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 const skillsRef = ref(null)
 let ctx
 
-const categories = [
-  {
-    name: 'Frontend',
-    skills: ['Vue', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Bootstrap']
-  },
-  {
-    name: 'Backend',
-    skills: ['Node.js', 'Express', 'Laravel', 'REST API', 'MongoDB', 'MySQL']
-  },
-  {
-    name: 'Tools',
-    skills: ['Git', 'GitHub', 'Postman', 'Figma', 'Vite']
-  }
-]
+import { skillCategories as categories } from '@/data/skills'
 
 onMounted(() => {
   const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -121,12 +108,37 @@ onUnmounted(() => {
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-8 md:col-span-2">
                   <div 
                     v-for="skill in cat.skills" 
-                    :key="skill"
+                    :key="skill.name"
                     class="group flex items-center justify-between py-2 border-b border-border-custom/20 text-secondary-text hover:text-primary-text transition-colors duration-300 select-none cursor-pointer"
                   >
-                    <span class="font-sans text-xs md:text-sm font-medium tracking-wide transition-colors duration-300 group-hover:text-tech-hover">
-                      {{ skill }}
-                    </span>
+                    <div class="flex items-center gap-3 md:gap-3.5">
+                      <!-- Decorative Brand / Technology Icon -->
+                      <div 
+                        v-if="skill.icon"
+                        class="flex items-center justify-center w-[22px] h-[22px] md:w-[25px] md:h-[25px] opacity-75 group-hover:opacity-100 transition-all duration-300 text-secondary-text group-hover:text-tech-hover group-hover:scale-[1.05]"
+                        aria-hidden="true"
+                      >
+                        <svg 
+                          v-if="!skill.isComponent" 
+                          role="img" 
+                          viewBox="0 0 24 24" 
+                          class="w-full h-full fill-current"
+                        >
+                          <path :d="skill.icon" />
+                        </svg>
+                        <component 
+                          v-else 
+                          :is="skill.icon" 
+                          class="w-full h-full stroke-[1.5] stroke-current" 
+                        />
+                      </div>
+                      
+                      <!-- Technology Name -->
+                      <span class="font-sans text-xs md:text-sm font-medium tracking-wide transition-colors duration-300 group-hover:text-tech-hover">
+                        {{ skill.name }}
+                      </span>
+                    </div>
+                    
                     <span class="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-accent group-hover:text-tech-hover font-semibold text-xs leading-none">
                       &rarr;
                     </span>
