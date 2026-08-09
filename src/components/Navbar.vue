@@ -34,9 +34,16 @@ onUnmounted(() => {
     <nav class="max-w-7xl mx-auto px-6 flex items-center justify-between">
       <RouterLink 
         to="/" 
-        class="font-heading font-bold text-sm md:text-base tracking-widest text-text hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded transition-colors duration-200"
+        class="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded transition-colors duration-200"
       >
-        M.
+        <img 
+          src="/logo.png" 
+          alt="Logo" 
+          :class="[
+            'h-9 md:h-10 w-auto object-contain transition-transform duration-300 hover:scale-105',
+            theme === 'dark' ? 'invert' : ''
+          ]" 
+        />
       </RouterLink>
       
       <div class="flex items-center gap-6 md:gap-10 font-sans text-[11px] md:text-xs font-semibold tracking-widest uppercase">
