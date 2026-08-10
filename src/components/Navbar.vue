@@ -27,14 +27,6 @@ const handleKeyDown = (e) => {
   }
 }
 
-watch(isMenuOpen, (newVal) => {
-  if (newVal) {
-    document.body.classList.add('overflow-hidden')
-  } else {
-    document.body.classList.remove('overflow-hidden')
-  }
-})
-
 watch(() => route.fullPath, () => {
   closeMenu()
 })
@@ -49,17 +41,16 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
   window.removeEventListener('keydown', handleKeyDown)
-  document.body.classList.remove('overflow-hidden')
 })
 
 const menuLinks = [
-  { num: '01', name: 'About', to: '/#about' },
-  { num: '02', name: 'Skills', to: '/#skills' },
-  { num: '03', name: 'Projects', to: '/#projects' },
-  { num: '04', name: 'Journey', to: '/#journey' },
-  { num: '05', name: 'Achievements', to: '/#achievements' },
-  { num: '06', name: 'Lab', to: '/#lab' },
-  { num: '07', name: 'Contact', to: '/#contact' }
+  { name: 'About', to: '/#about' },
+  { name: 'Skills', to: '/#skills' },
+  { name: 'Projects', to: '/#projects' },
+  { name: 'Journey', to: '/#journey' },
+  { name: 'Achievements', to: '/#achievements' },
+  { name: 'Lab', to: '/#lab' },
+  { name: 'Contact', to: '/#contact' }
 ]
 </script>
 
@@ -184,59 +175,49 @@ const menuLinks = [
         </button>
       </div>
     </nav>
+
+    <!-- Mobile Navigation Dropdown Menu -->
+    <transition name="menu-fade">
+      <div 
+        v-if="isMenuOpen" 
+        id="mobile-menu"
+        class="absolute top-full left-0 w-full bg-bg/95 backdrop-blur-md border-b border-border py-4 px-6 flex flex-col z-40 shadow-xl"
+      >
+        <!-- Background Grid Lines (Subtle Editorial Alignment) -->
+        <div class="absolute inset-0 grid grid-cols-12 max-w-7xl mx-auto px-6 pointer-events-none opacity-5">
+          <div v-for="n in 12" :key="n" class="border-r border-text h-full last:border-r-0"></div>
+        </div>
+
+        <!-- Menu Links -->
+        <div class="relative z-10 flex flex-col w-full">
+          <RouterLink 
+            v-for="link in menuLinks" 
+            :key="link.to"
+            :to="link.to"
+            @click="closeMenu"
+            data-cursor="click"
+            class="group flex items-center py-2.5 border-b border-border/20 last:border-0 hover:text-accent transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 rounded-sm"
+          >
+            <span class="font-heading font-semibold text-[13px] tracking-widest uppercase text-text-secondary group-hover:text-accent transition-colors duration-200">
+              {{ link.name }}
+            </span>
+          </RouterLink>
+        </div>
+      </div>
+    </transition>
   </header>
-
-  <!-- Mobile Navigation Overlay Menu -->
-  <transition name="menu-fade">
-    <div 
-      v-if="isMenuOpen" 
-      id="mobile-menu"
-      class="fixed inset-0 z-40 bg-bg pt-28 pb-12 px-6 flex flex-col justify-between overflow-y-auto"
-    >
-      <!-- Background Grid Lines (Subtle Editorial Alignment) -->
-      <div class="absolute inset-0 grid grid-cols-12 max-w-7xl mx-auto px-6 pointer-events-none opacity-5">
-        <div v-for="n in 12" :key="n" class="border-r border-text h-full last:border-r-0"></div>
-      </div>
-
-      <!-- Menu Links -->
-      <div class="relative z-10 flex flex-col justify-center flex-grow max-w-lg mx-auto w-full gap-2">
-        <RouterLink 
-          v-for="link in menuLinks" 
-          :key="link.to"
-          :to="link.to"
-          @click="closeMenu"
-          data-cursor="click"
-          class="group flex items-baseline gap-4 py-3 border-b border-border/30 last:border-0 hover:border-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 rounded px-2"
-        >
-          <span class="font-heading font-bold text-xs text-accent tracking-wider w-8 select-none">
-            {{ link.num }}
-          </span>
-          <span class="font-heading font-bold text-2xl tracking-tight uppercase text-text group-hover:text-accent transition-colors duration-300">
-            {{ link.name }}
-          </span>
-        </RouterLink>
-      </div>
-      
-      <!-- Footer inside menu -->
-      <div class="relative z-10 text-center pt-6 border-t border-border/30 max-w-lg mx-auto w-full">
-        <span class="font-sans text-[10px] tracking-widest text-text-secondary uppercase select-none">
-          &copy; {{ new Date().getFullYear() }} MUHAMMAD
-        </span>
-      </div>
-    </div>
-  </transition>
 </template>
 
 <style scoped>
 .menu-fade-enter-active,
 .menu-fade-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .menu-fade-enter-from,
 .menu-fade-leave-to {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-4px);
 }
 
 @media (prefers-reduced-motion: reduce) {
