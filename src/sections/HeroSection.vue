@@ -126,12 +126,23 @@ onUnmounted(() => {
           <div class="flex flex-wrap gap-4 items-center">
             <a 
               href="#projects" 
+              data-cursor="click"
               class="hero-cta inline-flex items-center justify-center px-6 py-3.5 border border-primary-text text-xs font-semibold tracking-widest uppercase text-primary-bg bg-primary-text hover:bg-transparent hover:text-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all duration-300"
             >
               View My Work <span class="ml-2 font-sans font-normal">&rarr;</span>
             </a>
             <a 
+              href="/cv/Muhammad-Nur-Syafii-CV.pdf"
+              download
+              data-cursor="download"
+              aria-label="Download CV"
+              class="hero-cta inline-flex items-center justify-center px-6 py-3.5 border border-border-custom text-xs font-semibold tracking-widest uppercase text-primary-text hover:border-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all duration-300"
+            >
+              Download CV <span class="ml-2 font-sans font-normal">↓</span>
+            </a>
+            <a 
               href="#contact" 
+              data-cursor="click"
               class="hero-cta inline-flex items-center justify-center px-6 py-3.5 border border-border-custom text-xs font-semibold tracking-widest uppercase text-primary-text hover:border-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all duration-300"
             >
               Let's Talk

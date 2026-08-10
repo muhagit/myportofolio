@@ -60,6 +60,12 @@ onUnmounted(() => {
           Projects
         </RouterLink>
         <RouterLink 
+          to="/#lab" 
+          class="text-text-secondary hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded transition-colors duration-200"
+        >
+          Lab
+        </RouterLink>
+        <RouterLink 
           to="/#contact" 
           class="text-text-secondary hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded transition-colors duration-200"
         >

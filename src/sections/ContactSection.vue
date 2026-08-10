@@ -72,7 +72,7 @@ onUnmounted(() => {
         
         <!-- Left Column: Section Label (3 cols) -->
         <div class="col-span-12 md:col-span-3 space-y-4">
-          <div class="font-heading font-bold text-lg tracking-wider text-primary-text contact-label">06</div>
+          <div class="font-heading font-bold text-lg tracking-wider text-primary-text contact-label">08</div>
           <h2 
             id="contact-heading" 
             class="font-sans text-[11px] font-semibold tracking-widest text-secondary-text uppercase contact-label"
@@ -106,9 +106,10 @@ onUnmounted(() => {
                 Have an idea, project, or just want to talk? I'd be happy to connect.
               </p>
               
-              <div v-if="contact.email" class="pt-2">
+              <div v-if="contact.email" class="pt-2 flex flex-wrap items-center gap-x-8 gap-y-4">
                 <a 
                   :href="`mailto:${contact.email}`"
+                  data-cursor="email"
                   class="group inline-flex items-center text-lg md:text-xl font-heading font-bold tracking-wider text-primary-text hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded transition-colors duration-300 relative pb-2"
                 >
                   <span>EMAIL ME</span>
@@ -120,6 +121,24 @@ onUnmounted(() => {
                   </span>
                   <!-- Animated Underline -->
                   <span class="absolute bottom-0 left-0 w-full h-[1.5px] bg-primary-text group-hover:bg-accent transform scale-x-100 group-hover:scale-x-105 transition-all duration-300 origin-left"></span>
+                </a>
+
+                <a 
+                  href="/cv/Muhammad-Nur-Syafii-CV.pdf"
+                  download
+                  data-cursor="download"
+                  aria-label="Download CV"
+                  class="group inline-flex items-center text-lg md:text-xl font-heading font-bold tracking-wider text-secondary-text hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded transition-colors duration-300 relative pb-2"
+                >
+                  <span>DOWNLOAD CV</span>
+                  <span 
+                    class="ml-2 transform group-hover:translate-y-1 transition-transform duration-300 font-sans font-normal"
+                    aria-hidden="true"
+                  >
+                    ↓
+                  </span>
+                  <!-- Animated Underline -->
+                  <span class="absolute bottom-0 left-0 w-full h-[1.5px] bg-secondary-text group-hover:bg-accent transform scale-x-100 group-hover:scale-x-105 transition-all duration-300 origin-left"></span>
                 </a>
               </div>
             </div>

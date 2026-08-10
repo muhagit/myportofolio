@@ -45,6 +45,7 @@ const handleImageError = () => {
     >
       <RouterLink 
         :to="{ name: 'project-detail', params: { id: project.id } }"
+        data-cursor="view"
         class="block overflow-hidden border border-border bg-border/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
         aria-label="View case study for {{ project.title }}"
       >
@@ -108,6 +109,7 @@ const handleImageError = () => {
       <div class="pt-2">
         <RouterLink 
           :to="{ name: 'project-detail', params: { id: project.id } }"
+          data-cursor="view"
           class="inline-flex items-center gap-2 text-xs font-bold font-sans tracking-widest uppercase text-text hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors duration-300"
         >
           View Case Study 

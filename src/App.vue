@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router'
 import Navbar from '@/components/Navbar.vue'
 import Footer from '@/components/Footer.vue'
+import CustomCursor from '@/components/CustomCursor.vue'
 </script>
 
 <template>
@@ -17,5 +18,6 @@ import Footer from '@/components/Footer.vue'
     </main>
     
     <Footer />
+    <CustomCursor />
   </div>
 </template>

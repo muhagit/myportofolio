@@ -5,6 +5,8 @@ import AboutSection from '@/sections/AboutSection.vue'
 import SkillsSection from '@/sections/SkillsSection.vue'
 import ProjectsSection from '@/sections/ProjectsSection.vue'
 import JourneySection from '@/sections/JourneySection.vue'
+import AchievementsSection from '@/sections/AchievementsSection.vue'
+import LabSection from '@/sections/LabSection.vue'
 import ContactSection from '@/sections/ContactSection.vue'
 
 onMounted(() => {
@@ -33,7 +35,13 @@ onMounted(() => {
     <!-- 05 / Journey -->
     <JourneySection />
 
-    <!-- 06 / Contact -->
+    <!-- 06 / Achievements -->
+    <AchievementsSection />
+
+    <!-- 07 / Developer Lab -->
+    <LabSection />
+
+    <!-- 08 / Contact -->
     <ContactSection />
   </div>
 </template>

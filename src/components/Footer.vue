@@ -26,6 +26,7 @@ import { contact } from '@/data/contact'
             <a 
               v-if="contact.github" 
               :href="contact.github" 
+              data-cursor="open"
               target="_blank" 
               rel="noopener noreferrer" 
               class="text-secondary-text hover:text-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded transition-colors duration-200" 
@@ -40,6 +41,7 @@ import { contact } from '@/data/contact'
             <a 
               v-if="contact.linkedin" 
               :href="contact.linkedin" 
+              data-cursor="open"
               target="_blank" 
               rel="noopener noreferrer" 
               class="text-secondary-text hover:text-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded transition-colors duration-200" 
@@ -54,6 +56,7 @@ import { contact } from '@/data/contact'
             <a 
               v-if="contact.instagram" 
               :href="contact.instagram" 
+              data-cursor="open"
               target="_blank" 
               rel="noopener noreferrer" 
               class="text-secondary-text hover:text-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded transition-colors duration-200" 
@@ -70,6 +73,7 @@ import { contact } from '@/data/contact'
             <a 
               v-if="contact.tiktok" 
               :href="contact.tiktok" 
+              data-cursor="open"
               target="_blank" 
               rel="noopener noreferrer" 
               class="text-secondary-text hover:text-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded transition-colors duration-200" 
@@ -84,6 +88,7 @@ import { contact } from '@/data/contact'
             <a 
               v-if="contact.email" 
               :href="`mailto:${contact.email}`" 
+              data-cursor="email"
               class="text-secondary-text hover:text-primary-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded transition-colors duration-200" 
               aria-label="Email"
             >
