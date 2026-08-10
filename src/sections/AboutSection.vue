@@ -99,7 +99,7 @@ onUnmounted(() => {
           <!-- Description and Subtitle Metadata -->
           <div class="space-y-10">
             <p class="font-sans text-sm md:text-base leading-relaxed text-secondary-text about-desc">
-              I'm an Informatics student focused on web development and software engineering. I enjoy turning ideas into functional digital products, experimenting with new technologies, and continuously improving how I build software.
+              I am a 7th-semester Informatics student at Universitas AMIKOM Yogyakarta (GPA 3.73) with a focus on full-stack web development. Experienced in building applications using React, Vue, Next.js, Express, and Laravel, and accustomed to working with REST APIs and MongoDB & MySQL databases. Actively participating in self-development programs such as Google Student Ambassador and full-stack developer bootcamps, and involved in the campus tech community. Currently completing a thesis on a gamified JavaScript programming learning platform.
             </p>
 
             <!-- Metadata Area -->

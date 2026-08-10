@@ -1,10 +1,8 @@
 import {
+  siReact,
   siVuedotjs,
+  siNextdotjs,
   siJavascript,
-  siHtml5,
-  siCss,
-  siTailwindcss,
-  siBootstrap,
   siNodedotjs,
   siExpress,
   siLaravel,
@@ -22,12 +20,10 @@ export const skillCategories = [
   {
     name: 'Frontend',
     skills: [
+      { name: 'React', icon: siReact.path },
       { name: 'Vue', icon: siVuedotjs.path },
-      { name: 'JavaScript', icon: siJavascript.path },
-      { name: 'HTML', icon: siHtml5.path },
-      { name: 'CSS', icon: siCss.path },
-      { name: 'Tailwind CSS', icon: siTailwindcss.path },
-      { name: 'Bootstrap', icon: siBootstrap.path }
+      { name: 'Next.js', icon: siNextdotjs.path },
+      { name: 'JavaScript', icon: siJavascript.path }
     ]
   },
   {
@@ -36,7 +32,12 @@ export const skillCategories = [
       { name: 'Node.js', icon: siNodedotjs.path },
       { name: 'Express', icon: siExpress.path },
       { name: 'Laravel', icon: siLaravel.path },
-      { name: 'REST API', icon: Webhook, isComponent: true },
+      { name: 'REST API', icon: Webhook, isComponent: true }
+    ]
+  },
+  {
+    name: 'Database',
+    skills: [
       { name: 'MongoDB', icon: siMongodb.path },
       { name: 'MySQL', icon: siMysql.path }
     ]
