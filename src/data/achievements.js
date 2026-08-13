@@ -1,13 +1,13 @@
 export const achievements = [
   {
     id: "google-student-ambassador",
-    type: "award",
-    title: "Google Student Ambassador 2025",
+    type: "certificate",
+    title: "Google Student Ambassador - Certificate of Graduation",
     issuer: "Google",
     year: "2025",
-    description: "Selected as a student representative to advocate for Google technologies, organize workshops, and build a collaborative tech community on campus.",
-    image: "",
-    credentialUrl: "https://google.com"
+    description: "Awarded in recognition of successful participation as a Google Student Ambassador, having been selected from a pool of 12,000 students nationwide, and for exceptional leadership in championing the adoption of Google AI within the campus community.",
+    image: "/sertifikatgsa.png",
+    credentialUrl: ""
   },
 
   
