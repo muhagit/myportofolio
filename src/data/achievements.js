@@ -9,6 +9,14 @@ export const achievements = [
     image: "/sertifikatgsa.png",
     credentialUrl: ""
   },
-
-  
+  {
+    id: "sololearn-web-development",
+    type: "certificate",
+    title: "SoloLearn - Web Development",
+    issuer: "SoloLearn",
+    year: "2026",
+    description: "Successfully completed the Web Development course on SoloLearn, validating proficiency in building responsive web layouts, structuring content with HTML, designing styles with CSS, and implementing web design best practices.",
+    image: "/sertifsolo.jpg",
+    credentialUrl: ""
+  }
 ]
