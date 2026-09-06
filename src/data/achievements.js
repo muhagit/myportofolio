@@ -1,5 +1,15 @@
 export const achievements = [
   {
+    id: "freecodecamp-responsive-web-design",
+    type: "certificate",
+    title: "freeCodeCamp - Responsive Web Design",
+    issuer: "freeCodeCamp",
+    year: "2026",
+    description: "Successfully completed the Responsive Web Design Developer Certification on freeCodeCamp, representing approximately 300 hours of coursework covering HTML5, CSS3, responsive layout patterns, accessibility, and web design principles.",
+    image: "/sertiffcc.png",
+    credentialUrl: "https://freecodecamp.org/certification/fcc-bae1cd2d-a01f-4a4c-9753-39070afdb866/responsive-web-design-v9"
+  },
+  {
     id: "google-student-ambassador",
     type: "certificate",
     title: "Google Student Ambassador - Certificate of Graduation",
@@ -20,3 +30,4 @@ export const achievements = [
     credentialUrl: ""
   }
 ]
+
