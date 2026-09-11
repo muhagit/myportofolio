@@ -1,5 +1,15 @@
 export const achievements = [
   {
+    id: "freecodecamp-javascript",
+    type: "certificate",
+    title: "freeCodeCamp - JavaScript Developer Certification",
+    issuer: "freeCodeCamp",
+    year: "2026",
+    description: "Successfully completed the JavaScript Developer Certification on freeCodeCamp, representing approximately 300 hours of coursework covering core JavaScript algorithms, data structures, object-oriented programming (OOP), and functional programming.",
+    image: "/sertiffccjs.png",
+    credentialUrl: "https://freecodecamp.org/certification/fcc-bae1cd2d-a01f-4a4c-9753-39070afdb866/javascript-v9"
+  },
+  {
     id: "freecodecamp-responsive-web-design",
     type: "certificate",
     title: "freeCodeCamp - Responsive Web Design",
